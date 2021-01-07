@@ -1,0 +1,17 @@
+name: Copy
+on: 
+  push:
+    branches:
+      - master
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Copy
+      uses: andstor/copycat-action@v3
+      with:
+        personal_token: ${{ secrets.PERSONAL_TOKEN }}
+        src_path: /.
+        dst_path: /TR/
+        dst_owner: jaxoncreed
+        dst_repo_name: test-gh-actions-copy-2
